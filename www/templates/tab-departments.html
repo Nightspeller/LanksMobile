@@ -1,0 +1,32 @@
+<ion-view view-title="Филиалы">
+    <ion-content class="padding">
+
+        <div class="list list-inset">
+
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Найти город" ng-model="search">
+            </label>
+
+            <div class="item item-icon-right" ng-repeat="department in filteredDepartments = (departments.data | filter:search)" ui-sref="tab.department({department: department.cityEng})">
+                {{department.city}}
+                <i class="icon ion-ios-arrow-right"></i>
+            </div>
+
+        </div>
+
+        <div class="card" ng-if="search.length && filteredDepartments.length !== 0">
+            <div class="item item-text-wrap">
+                <i class="icon ion-information-circled"></i>
+                Возможно данный город обслуживается одним из этих филиалов!
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-text-wrap">
+                <i class="icon ion-information-circled"></i>
+                Не нашли нужного Вам города? Свяжитесь с нами по единому номеру <a href="tel:8-800-200-46-86">8-800-200-46-86</a> и мы что-нибудь придумаем!
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

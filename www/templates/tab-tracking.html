@@ -1,0 +1,65 @@
+<ion-view view-title="Отслеживание">
+    <ion-content class="padding">
+        <div class="list card">
+            <div class="item item-divider">Введите номер накладной:</div>
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Номер накладной" ng-model="search">
+            </label>
+
+            <div class="item item-body">
+                <button class="button button-block button-positive" ng-click="getStatus(search)">
+                    Узнать статус
+                </button>
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>ФИО:</b> {{trackingData.name}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Статус:</b> {{trackingData.status}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Номер накладной:</b> {{trackingData.invoiceNumber}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Номер консультанта:</b> {{trackingData.contractNumber}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Адрес доставки:</b> {{trackingData.address}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Контакт. телефон:</b> {{trackingData.phone}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Количество коробок:</b> {{trackingData.boxes}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Дата доставки:</b> {{trackingData.deliveryDate}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Время доставки:</b> {{trackingData.deliveryTime}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Водитель:</b> {{trackingData.driver}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Сумма накладной:</b> {{trackingData.invoiceAmount}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Сумма чека:</b> {{trackingData.checkAmount}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Дата заказа:</b> {{trackingData.orderDate}}
+            </div>
+            <div class="item item-body" ng-if="trackingData && trackingData !== 'none'">
+                <b>Оплата:</b> {{trackingData.payment}}
+            </div>
+
+            <div class="item item-body" ng-if="trackingData === 'none'">
+                Заказа с таким номером не найдено. Пожалуйста, перепроверьте номер или <a href="#/tab/contacts">свзяжитесь с оператором</a>
+            </div>
+
+        </div>
+
+    </ion-content>
+</ion-view>

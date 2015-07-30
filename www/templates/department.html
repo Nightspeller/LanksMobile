@@ -1,0 +1,43 @@
+<ion-view view-title="{{department.city}}">
+    <ion-content class="padding">
+        <div class="card">
+            <div class="item item-divider">
+               Офис:
+            </div>
+            <div class="item item-text-wrap item-icon-right" ui-sref="tab.department-map({department: department.cityEng})"  ng-if="department.address">
+               {{department.address}}
+                <i class="icon ion-map"></i>
+            </div>
+            <div class="item item-text-wrap"  ng-if="department.email">
+                <b>E-mail:</b> <a href="mailto:{{department.email}}">{{department.email}}</a>
+            </div>
+            <div class="item item-text-wrap" ng-if="department.mainPhone">
+                <b>Телефон:</b> <a href="tel:{{department.mainPhone}}">{{department.mainPhone}}</a>
+            </div>
+            <div class="item item-text-wrap" ng-if="department.fax">
+                <b>Факс:</b> {{department.fax}}
+            </div>
+            <div class="item item-text-wrap" ng-if="department.skype">
+                <b>Skype:</b> <a href="skype:{{department.skype}}?call">{{department.skype}}</a>
+            </div>
+            <div class="item item-text-wrap" ng-if="department.additionalPhone">
+                <b>Доп.номера:</b> {{department.additionalPhone}}
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="item item-divider">
+                Склад:
+            </div>
+            <div class="item item-text-wrap">
+                {{department.stockAddress}}
+            </div>
+            <div class="item item-text-wrap">
+                <b>Координаты:</b> {{department.coordinates}}
+            </div>
+        </div>
+
+
+
+    </ion-content>
+</ion-view>
